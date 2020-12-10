@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
                 if boxes.index(sublist)in open:
                     open.append(item)
     q = set(open)
-    for z in range(len(boxes) - 1):
+    for z in range(len(boxes)):
         if z not in q:
             return False
     return True
