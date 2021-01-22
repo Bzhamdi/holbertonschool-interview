@@ -1,58 +1,25 @@
-#include "lists.h"
 #include <stdio.h>
-/**
- * get_nodeint_at_index - return the nth node of a linked list.
- * @head: the head of the list
- * @index: the index of the node
- * Return: nth node
- */
-listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
-{
-	unsigned int i = 0;
-
-	if (head == NULL)
-		return (NULL);
-	for (i = 0; i < index && head != NULL; i++)
-	{
-		head = head->next;
-	}
-	if (head)
-		return (head);
-
-	return (NULL);
-}
+#include "lists.h"
 /**
  * is_palindrome -  checks if a singly linked list is a palindrome.
  * @head: The head.
  * Return: 1 if palindrome and 0 if not
  */
-
 int is_palindrome(listint_t **head)
 {
-	unsigned int l, i;
-	listint_t *first, *last, *len;
+	int len = -1, test = 1, x = 1, array[3000];
 
-	if (*head == NULL)
-		return (1);
-	if (head == NULL)
-		return (1);
-	len = *head;
-	while (len->next != NULL)
+	while (*head)
 	{
-		len = len->next;
-		l++;
+		len++;
+		array[len] = (*head)->n;
+		*head = (*head)->next;
 	}
-	if (l == 1)
-		return (1);
-
-	for (i = 0; i < (l / 2); i++)
+	while (--len > x  && test == 1)
 	{
-		first = get_nodeint_at_index(*head, i);
-		last = get_nodeint_at_index(*head, (l - 1 - i));
-		if (first->n != last->n)
-			return (0);
+		if (array[x] != array[len])
+			test = 0;
+		++x;
 	}
-
-	return (1);
+	return (test);
 }
-
