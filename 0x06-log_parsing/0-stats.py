@@ -32,10 +32,10 @@ try:
             for i in sorted(mydict):
                 if mydict[i] > 0:
                     print("{}: {}".format(i, mydict[i]))
-
 except KeyboardInterrupt:
-    print("File size: {:d}".format(file_size))
+    pass
+finally:
+    print('File size: {:d}'.format(file_size))
     for key in sorted(mydict.keys()):
         if mydict[key] != 0:
             print("{}: {:d}".format(key, mydict[key]))
-    raise
