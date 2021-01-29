@@ -6,7 +6,6 @@ script that reads stdin line by line and computes metrics
 
 import sys
 
-file_size = 0
 mydict = {
     "200": 0,
     "301": 0,
@@ -16,6 +15,8 @@ mydict = {
     "404": 0,
     "405": 0,
     "500": 0}
+
+file_size = 0
 
 try:
     for x, line in enumerate(sys.stdin, 1):
