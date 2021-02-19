@@ -27,7 +27,6 @@ def validUTF8(data):
                 c = 3
 
         else:
-            print('a')
             if (x >> 6) != 0b10:
                 return False
             c -= 1
