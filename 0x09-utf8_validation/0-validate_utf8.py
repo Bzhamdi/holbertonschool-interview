@@ -25,9 +25,9 @@ def validUTF8(data):
                 c = 2
             elif (x >> 3) == 0b11110:
                 c = 3
-            elif (x >> 7):
-                return False
+
         else:
+            print('a')
             if (x >> 6) != 0b10:
                 return False
             c -= 1
