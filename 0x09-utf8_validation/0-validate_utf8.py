@@ -19,11 +19,11 @@ def validUTF8(data):
     c = 0
     for x in data:
         if c == 0:
-            if (x >> 5) == 110:
+            if (x >> 5) == 0b110:
                 c = 1
-            elif (x >> 4) == 1110:
+            elif (x >> 4) == 0b1110:
                 c = 2
-            elif (x >> 3) == 11110:
+            elif (x >> 3) == 0b11110:
                 c = 3
             elif (x >> 7):
                 return False
